@@ -1,0 +1,21 @@
+{
+  "name": "mantra-zh",
+  "version": "0.2.1",
+  "private": true,
+  "contributors": [
+    "Arunoda Susiripala <arunoda@kadira.io> (https://twiiter.com/arunoda)"
+  ],
+  "license": "MIT",
+  "homepage": "https://wmzhai.github.io/mantra-zh",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/wmzhai/mantra-zh.git"
+  },
+  "scripts": {
+    "build": "mkdir -p out; cp resources/*.css out; spec-md spec/mantra.md > out/index.html",
+    "serve": "cd out && python -m SimpleHTTPServer",
+    "watch": "onchange './spec/*.md' -- npm run build",
+    "write": "npm run build; open out/index.html; npm run watch",
+    "deploy": "sh ./resources/push-to-gh-pages.sh"
+  }
+}
