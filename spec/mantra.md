@@ -19,5 +19,7 @@ Mantra中文版
 
 # [Appendix D: File Naming Conventions](d.appendix.md)
 
+# [Appendix E: Vocabulary](e.appendix.md)
+
 
 *原版文档及版权说明参考https://kadirahq.github.io/mantra/*

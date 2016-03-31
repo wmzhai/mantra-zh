@@ -1,6 +1,6 @@
 # B. 附录: 服务端目录结构
 
-服务端目录结构不是Mantra的核心内容，不过它类似客户端的目录结构。在服务端，有一个main目录以及一个 `main.js` 的JavaScript文件。
+服务端目录结构不是Mantra的核心内容，不过它类似客户端的目录结构，有一个main目录以及一个 `main.js` 的js文件。
 
 ```
 * methods
@@ -10,11 +10,10 @@
 * main.js
 ```
 
-下面逐个目录和文件讨论。
 
 ## methods
 
-应用程序的Method放在这个目录下，里面的文件结构如下：
+应用程序的Method放在这个目录下，文件结构如下：
 
 ```
 * posts.js
@@ -23,13 +22,11 @@
   - posts.js
 ```
 
-这里有一个`posts.js`文件，实现了应用程序里关于`posts`特性的一些method。根据程序，我们有不同的文件。
+这里有一个`posts.js`文件，实现了应用程序里关于`posts`特性的一些method。这里有一个默认的导出函数，Meteor的Method就定义在这个函数里。
 
-在JavaScript文件里，我们有一个默认的导出函数，Meteor的Method就定义在这个函数里。
+命名method名称的时候，需要一个前缀，前缀是文件名和一个点，比如 `posts.`
 
-命名method名称的时候，需要一个前缀，前缀是文件名和一个点。这里的前缀是 `posts.`
-
-项目是一些 `posts.js` 内定义的方法的例子：
+项目是一些 `posts.js` 内定义的method的例子：
 
 ```js
 import {Posts, Comments} from '/lib/collections';
@@ -51,7 +48,9 @@ export default function() {
 }
 ```
 
-最后，需要一个 `index.js` 文件， 它可以导入目录下的其他模块并在一个默认的导出里面调用。 所以当导入方法时，我们可以用单个导入实现。下面是一个`index.js`的例子：
+最后，需要一个 `index.js` 文件， 它可以导入目录下的其它模块并在默认导出里调用。 所以当导入方法时，我们可以用单个导入实现。
+
+下面是一个`index.js`的例子：
 
 ```js
 import posts from './posts';
