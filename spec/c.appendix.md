@@ -1,35 +1,35 @@
-# C. Appendix: Organizing Modules
+# C. 附录: 组织模块
 
-Mantra has a 100% [module-based](#sec-Mantra-Modules) app architecture. There should be at least a single module.
+Mantra是一个百分之百[基于模块](#sec-Mantra-Modules)的应用程序架构，至少需要一个模块。
 
-We've discussed how to organize files inside a module and how to use them. But, we didn't discuss how to organize modules.
+我们已经讨论了如何在模块里面组织代码以及如何使用它们。但是我并没有讨论过如何组织模块。
 
-That's because it's different from app to app.
+因为不同应用程序是有区别的。
 
-However, we are suggesting some potential patterns that can be used to organize modules.
+下面是一些建议的组织模块的方式。
 
-## Single Core Module
+## 单个核心模块
 
-For a simple app, we can put all the code inside a single module and name it as `core`. This would work for a simple app where there is a smaller client-side codebase.
+对于一个简单程序而言，我们可以将所有代码放到一个模块里，并命名为 `core`。这个比较适用于客户端代码比较少的简单程序。
 
-## Core Module & Multiple Feature Modules
+## 核心模块外加多个特性模块
 
-This is an extended version of the above "Single Module App" pattern. Here it is:
+这是在上述“单个核心模块”模式上的扩充，如下：
 
-* We have a core module containing all the core client-side code, including all the routes in the app.
-* Then we have different modules for major features in our app. These modules do not contain routes.
+* 有一个具备所有客户端核心代码的core模块，包括所有的路由。
+* 针对应用程序的不同特性，具有不同的模块，而这些模块没有路由。
 
-## Multi Modules
+## 多模块
 
-This the multi-module approach where there is no single core module.
+在多模块方式下，没有单个核心模块。
 
-* There are multiple modules for each main feature in the app.
-* Each of them has its own route.
+* 针对程序的每个特性都有多个模块。
+* 每个模块具有自己的路由。
 
-## Pages Module
+## 页面模块
 
-NOTE: This can be used with any other pattern mentioned above.
+注意: 这种方式可以与上述任何方式一起使用。
 
-Sometimes, we need to show some UI pages. They don't have their own actions, routes, or configurations. They only contain some UI code. These can be either UI components or some containers.
+有时候，我们需要显示一些UI页面。但是他们并没有action，路由和配置。他们只包含UI代码，可能是UI组件或者其他容器。
 
-For this purpose, we can use an [implicit module](#sec-Implicit-Modules).
+针对这个目的，我们可以使用[隐含模块](#sec-Implicit-Modules).
