@@ -1,42 +1,43 @@
-# D. Appendix: File Naming Conventions
+# D. 附录: 命名约定
 
-In [Directory Layout](#sec-Directory-Layout), we discussed ways we can organize files for different components.
 
-Here we discuss ways to name files.
+在[目录结构](#sec-Directory-Layout)一节, 我们讨论了我们可以为不同的组件组织文件。
 
-## Source File Names
+这里我们讨论命名文件的方式。
 
-When we remove the extension from the filename it should satisfy following conditions:
+## 源码文件名称
 
-* All letters should be lower case.
-* Filename should be [alphanumeric](https://en.wikipedia.org/wiki/Alphanumeric) and can have the `_` symbol.
-* Filename should start with a letter.
+我们从文件名除去扩展名后需要满足如下条件：
 
-Here's the regular expression for the above rules:
+* 所有字母需要小写字母
+* 文件名需要是[alphanumeric](https://en.wikipedia.org/wiki/Alphanumeric)的，可以外加下划线 `_` 符号。
+* 文件名需要以字母开头。
+
+下面是上述规则的正则表达式:
 
 ```js
 /^[a-z]+[a-z0-9_]+$/
 ```
 
-## Test File Names
+## 测试文件名称
 
-This is how we name files inside the `tests` directory. Here are the rules:
+我们用如下规则命名`tests`目录下的文件名：
 
-* There should be an identical filename in the source directory.
-* If not, when removing the postfix, there should be an identical filename in the source directory.
+* 在源码目录下需要有一个一样的名称
+* 如果没有，去掉后缀以后，在源码目录下需要有一个一样的名称
 
-### Postfix
+### 后缀
 
-Most of the time, we can have a test file for each source file. Sometimes, we need to create multiple test files for a single source file. That's where we'll use a postfix.
+大多数情况下，每个源码文件都有一个测试文件。有时候，我们需要为一个源码文件创建多个测试文件。这时，就需要编写后缀了。
 
-If that source filename is `posts.js`, then with the postfix it'll look like this:
+如果源码文件名是 `posts.js`, 那么添加后缀以后将会如下的样子：
 
 ```
 posts-part1.js
 posts-part2.js
 ```
 
-This is the regular expression for the above rules:
+下面是上述规则的正则表达式:
 
 ```js
 /^([a-z]+[a-z0-9_]+)(\-[a-z]+[a-z0-9_]+)*$/
