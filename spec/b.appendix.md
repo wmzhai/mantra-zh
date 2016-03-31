@@ -1,8 +1,6 @@
-# B. Appendix: Server-Side Directory Layout
+# B. 附录: 服务端目录结构
 
-This is a directory layout for the server side part of your app. This is **not** a core part of Mantra, but it follows the directory layout we used for the client side of our app.
-
-On the server side, we have four main directories and a JavaScript file called `main.js`.
+服务端目录结构不是Mantra的核心内容，不过它类似客户端的目录结构。在服务端，有一个main目录以及一个 `main.js` 的JavaScript文件。
 
 ```
 * methods
@@ -12,11 +10,11 @@ On the server side, we have four main directories and a JavaScript file called `
 * main.js
 ```
 
-Let's see what each of these directories and files does.
+下面逐个目录和文件讨论。
 
 ## methods
 
-This is the directory where we can put methods in your app. This is how the files in this directory look like:
+应用程序的Method放在这个目录下，里面的文件结构如下：
 
 ```
 * posts.js
@@ -25,15 +23,13 @@ This is the directory where we can put methods in your app. This is how the file
   - posts.js
 ```
 
-Here we have a file called `posts.js` which has methods for the feature `posts` in our app. Depending your app, we can have different files.
+这里有一个`posts.js`文件，实现了应用程序里关于`posts`特性的一些method。根据程序，我们有不同的文件。
 
-Inside this JavaScript file, we have a default export which is a function. Meteor methods are defined inside that function.
+在JavaScript文件里，我们有一个默认的导出函数，Meteor的Method就定义在这个函数里。
 
-When naming methods inside the `posts.js`, always prefix the method name. That prefix is the name of the file with a dot (.).
+命名method名称的时候，需要一个前缀，前缀是文件名和一个点。这里的前缀是 `posts.`
 
-In our case, the prefix is `posts.`
-
-For an example, here are some methods inside `posts.js`:
+项目是一些 `posts.js` 内定义的方法的例子：
 
 ```js
 import {Posts, Comments} from '/lib/collections';
@@ -55,9 +51,7 @@ export default function() {
 }
 ```
 
-Finally, there is a file called `index.js` which imports all other modules in this directory and invokes them in a default export. So, when importing methods, we can do it with a single import.
-
-Here's a sample `index.js` file:
+最后，需要一个 `index.js` 文件， 它可以导入目录下的其他模块并在一个默认的导出里面调用。 所以当导入方法时，我们可以用单个导入实现。下面是一个`index.js`的例子：
 
 ```js
 import posts from './posts';
@@ -69,25 +63,25 @@ export default function () {
 }
 ```
 
-### Tests
+### 测试
 
-We can write tests for methods inside the tests directory. For that, it's a better to do integration testing rather doing unit tests.
+我们可以为tests目录下的method编写测试，这时最好使用集成测试而不是单元测试。
 
-For that, you can use [Gagarin](https://github.com/anticoders/gagarin).
+具体内容可参考[Gagarin](https://github.com/anticoders/gagarin).
 
 ## publications
 
-This directory is identical to the `methods` directory, but we write publications instead of methods.
+这个目录和`methods`一致，我们写发布而不是method。
 
 ## libs
 
-This directory contains utility functions which we can use inside the server.
+这个目录包含一些在服务端使用的工具函数。
 
 ## configs
 
-This is the place where we can write configurations in our app. These configuration files should have a default export function which can be imported and invoked. Configuration code should stay inside that function.
+我们在这里写用用程序的配置信息，这些配置需要一个默认的导出函数，可以被导入和调用，配置代码需要在这个函数里编写。
 
-Here's an example configuration:
+下面是一个示例：
 
 ```js
 export default function() {
@@ -97,9 +91,9 @@ export default function() {
 
 ## main.js
 
-This is the place where we can start as the entry point for our app. We'll import methods, publications and configuration inside this file and invoke.
+这里是整个应用程序启动的入口点，我们在这里导入method，发布和配置代码。
 
-Here's an example `main.js` file:
+下面是一个`main.js`的示例：
 
 ```js
 import publications from './publications';
@@ -111,4 +105,4 @@ methods();
 addInitialData();
 ```
 
-NOTE: Have a look at this [sample app](https://github.com/mantrajs/mantra-sample-blog-app/tree/master/server) to see how it has implemented these guidelines.
+注意： 可以看这个[样例代码](https://github.com/mantrajs/mantra-sample-blog-app/tree/master/server)来学习具体的实现方式。
