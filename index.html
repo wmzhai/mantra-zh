@@ -1,0 +1,261 @@
+<!DOCTYPE html><html><!-- Built with spec-md --><head><meta charset="utf-8"><title>Mantra中文版</title><link href="spec.css" rel="stylesheet"><link href="highlight.css" rel="stylesheet"></head><body><header><h1>Mantra中文版</h1><section id="intro"><p><em>原版文档及版权说明参考https://kadirahq.github.io/mantra/</em> </p></section><div class="spec-toc"><ol><li><a href="#sec-undefined.-"><span class="spec-secid">1</span>简介</a><ol><li><a href="#sec-undefined.-.Mantra-"><span class="spec-secid">1.1</span>Mantra包含什么?</a></li><li><a href="#sec-undefined.-.Mantra-"><span class="spec-secid">1.2</span>Mantra不是什么?</a></li><li><a href="#sec-undefined.-.Mantra-"><span class="spec-secid">1.3</span>Mantra是什么?</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">1.4</span>我们为什么需要一个规范?</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">1.5</span>预备知识</a></li></ol></li><li><a href="#sec-undefined.-"><span class="spec-secid">2</span>核心内容</a><ol><li><a href="#sec-undefined.-.-"><span class="spec-secid">2.1</span>侧重客户端</a></li><li><a href="#sec-ES2015-"><span class="spec-secid">2.2</span>ES2015语法和模块</a></li><li><a href="#sec-UI-React"><span class="spec-secid">2.3</span>UI使用React</a></li><li><a href="#sec-Actions"><span class="spec-secid">2.4</span>Actions</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">2.5</span>状态管理</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">2.6</span>容器</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">2.7</span>应用程序上下文</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">2.8</span>依赖注入</a><ol><li><a href="#sec-undefined.-.-.-"><span class="spec-secid">2.8.1</span>配置依赖注入</a></li></ol></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">2.9</span>路由和组件挂载</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">2.10</span>库</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">2.11</span>测试</a><ol><li><a href="#sec-UI-"><span class="spec-secid">2.11.1</span>UI测试</a></li></ol></li><li><a href="#sec-undefined.-.Mantra-"><span class="spec-secid">2.12</span>Mantra模块</a><ol><li><a href="#sec-undefined.-.Mantra-.-"><span class="spec-secid">2.12.1</span>应用程序上下文和模块</a></li><li><a href="#sec-undefined.-.Mantra-.-"><span class="spec-secid">2.12.2</span>模块定义</a></li><li><a href="#sec-undefined.-.Mantra-.-"><span class="spec-secid">2.12.3</span>隐性模块</a></li><li><a href="#sec--UI-"><span class="spec-secid">2.12.4</span>模块容器和UI组件</a></li><li><a href="#sec--Actions"><span class="spec-secid">2.12.5</span>模块Actions</a></li><li><a href="#sec-undefined.-.Mantra-.-"><span class="spec-secid">2.12.6</span>路由</a></li><li><a href="#sec-undefined.-.Mantra-.-"><span class="spec-secid">2.12.7</span>核心模块</a></li><li><a href="#sec-undefined.-.Mantra-.-"><span class="spec-secid">2.12.8</span>避免子模块</a></li></ol></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">2.13</span>单入口点</a></li></ol></li><li><a href="#sec-undefined.-"><span class="spec-secid">3</span>目录结构</a><ol><li><a href="#sec-undefined.-.-"><span class="spec-secid">3.1</span>顶层目录结构</a><ol><li><a href="#sec-undefined.-.-.configs"><span class="spec-secid">3.1.1</span>configs</a></li><li><a href="#sec-modules"><span class="spec-secid">3.1.2</span>modules</a><ol><li><a href="#sec-actions"><span class="spec-secid">3.1.2.1</span>actions</a></li><li><a href="#sec-components"><span class="spec-secid">3.1.2.2</span>components</a></li><li><a href="#sec-containers"><span class="spec-secid">3.1.2.3</span>containers</a></li><li><a href="#sec-modules.configs"><span class="spec-secid">3.1.2.4</span>configs</a></li><li><a href="#sec-modules.libs"><span class="spec-secid">3.1.2.5</span>libs</a></li><li><a href="#sec-routes-jsx"><span class="spec-secid">3.1.2.6</span>routes.jsx</a></li><li><a href="#sec-index-js"><span class="spec-secid">3.1.2.7</span>index.js</a></li></ol></li><li><a href="#sec-undefined.-.-.main-js"><span class="spec-secid">3.1.3</span>main.js</a></li></ol></li></ol></li><li><a href="#sec-undefined.-"><span class="spec-secid">4</span>未来工作</a><ol><li><a href="#sec-undefined.-.-"><span class="spec-secid">4.1</span>服务端渲染</a></li><li><a href="#sec--NPM-Mantra-"><span class="spec-secid">4.2</span>通过NPM发布Mantra模块</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">4.3</span>代码标准</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">4.4</span>测试标准</a></li><li><a href="#sec--Composers"><span class="spec-secid">4.5</span>复用Composers</a></li></ol></li><li><a href="#sec--Mantra-"><span class="spec-secid">5</span>为Mantra贡献</a></li><li><a href="#sec-undefined.-"><span class="spec-secid">A</span>附录: 预备知识</a><ol><li><a href="#sec-ES2015"><span class="spec-secid">A.1</span>ES2015</a></li><li><a href="#sec-React"><span class="spec-secid">A.2</span>React</a></li><li><a href="#sec-React-"><span class="spec-secid">A.3</span>React容器</a></li><li><a href="#sec-Meteor-"><span class="spec-secid">A.4</span>Meteor基础</a></li></ol></li><li><a href="#sec-undefined.-"><span class="spec-secid">B</span>附录: 服务端目录结构</a><ol><li><a href="#sec-methods"><span class="spec-secid">B.1</span>methods</a><ol><li><a href="#sec-methods.-"><span class="spec-secid">B.1.1</span>测试</a></li></ol></li><li><a href="#sec-publications"><span class="spec-secid">B.2</span>publications</a></li><li><a href="#sec-undefined.-.libs"><span class="spec-secid">B.3</span>libs</a></li><li><a href="#sec-undefined.-.configs"><span class="spec-secid">B.4</span>configs</a></li><li><a href="#sec-undefined.-.main-js"><span class="spec-secid">B.5</span>main.js</a></li></ol></li><li><a href="#sec-undefined.-"><span class="spec-secid">C</span>附录: 组织模块</a><ol><li><a href="#sec-undefined.-.-"><span class="spec-secid">C.1</span>单个核心模块</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">C.2</span>核心模块外加多个特性模块</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">C.3</span>多模块</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">C.4</span>页面模块</a></li></ol></li><li><a href="#sec-undefined.-"><span class="spec-secid">D</span>附录: 命名约定</a><ol><li><a href="#sec-undefined.-.-"><span class="spec-secid">D.1</span>源码文件命名</a></li><li><a href="#sec-undefined.-.-"><span class="spec-secid">D.2</span>测试文件命名</a><ol><li><a href="#sec-undefined.-.-.-"><span class="spec-secid">D.2.1</span>后缀</a></li></ol></li></ol></li><li><a href="#sec-undefined.-"><span class="spec-secid">E</span>附录: 词汇表</a></li></ol></div></header><section id="sec-undefined.-"><h2><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-">1</a></span>简介</h2><p>Mantra是一个基于<a href="https://www.meteor.com/">Meteor</a>的应用程序架构，我们试图通过它达成如下两个目的.</p><p><strong>1. 可维护性</strong></p><p>可维护性是大规模团队工作成功的关键因素。为了达到这一目标，需要为代码的每一部分添加单元测试，并为各方面内容制定全面的标准。通过这种方式，新的团队成员也可以更加容易的融入到团队之中。</p><p><strong>2. 与时俱进</strong></p><p>JavaScript生态系统丰富多样，往往每个问题都有多个优秀方案，很难说谁是当前唯一的最佳选择，以及未来会发生什么变化。</p><p>Mantra定义了一些可长期遵守的核心原则，其它部分则可按需变化。</p><section id="sec-undefined.-.Mantra-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.Mantra-">1.1</a></span>Mantra包含什么?</h3><ul><li>它有一个时髦的基于React的 <strong>UI组件</strong> 界面层</li><li>它有一个定义业务逻辑的地方，我们称之为 <strong>action</strong></li><li>状态管理(Stage Management)并非由Mantra自身提供，您可以使用多种状态管理机制，包括Meteor/Tracker，Redux，Rx.js和Promises等</li><li>它提供了一种通过组合容器(composing containers)将状态和action集成到界面组件里的方法</li><li>它允许您注入依赖</li><li>它帮助您单元测试界面，action和容器</li><li>它有一个针对目录结构，文件命名和其它相关内容的标准</li></ul></section><section id="sec-undefined.-.Mantra-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.Mantra-">1.2</a></span>Mantra不是什么?</h3><ul><li>它不是一个应用程序平台。应用程序平台会考虑程序打包，网络传输和部署等问题。Mantra使用Meteor作为自己的应用程序平台</li><li>它不是一个样板程序，虽然我们给出了目录结构的规范</li><li>它不是一个代码生成工具，Mantra生态系统有一些代码生成工具，但是它们并不是Mantra的核心</li></ul></section><section id="sec-undefined.-.Mantra-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.Mantra-">1.3</a></span>Mantra是什么?</h3><ul><li>它是如何架构一个Meteor应用程序的标准的集合</li><li>它包括一些库，方便您在Meteor之上构建Mantra应用程序</li></ul></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">1.4</a></span>我们为什么需要一个规范?</h3><p>Mantra是一个应用程序架构，它与很多人相关，包括应用程序开发者，工具链开发者，教程作者和项目经理，所以需要制定一个所有人能够遵循的共同标准。</p></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">1.5</a></span>预备知识</h3><p>如果您具备如下几方面的预备知识，学习mantra会更加方便。</p><ul><li>ES2015</li><li>React</li><li>React容器</li><li>Meteor基础 (Pub/Sub, Tracker, ReactiveDict, etc.)</li></ul><p>更多相关知识可以参考附录A。 </p></section></section><section id="sec-undefined.-"><h2><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-">2</a></span>核心内容</h2><p>这里介绍Mantra的核心内容，以及它们的组织方式。</p><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">2.1</a></span>侧重客户端</h3><p>Mantra重点关注应用程序的<strong>客户端</strong>。它推荐代码共享，但并不像常规的meteor程序一样将客户端和服务端代码混合在一起。这里主要基于如下几点考虑：</p><ul><li>客户端是代码最多的地方，需要投入的工作量也最多，服务端则相对容易管理和组织。</li><li>未来客户端程序将会通过schema与服务端交互，客户端程序对于服务端的实现机制是一无所知的。</li><li>Mantra不相信<a href="https://voice.kadira.io/say-no-to-isomorphic-apps-b7b7c419c634#.hogcs5r24">万能应用</a>， 它鼓励单个服务器和多个客户端应用程序交互，并在最大程度实现代码共享。</li></ul><p>基于上述的事实，将客户端和服务端代码混合不是一个好主意。<strong>这个规范里面讨论的内容主要是针对客户端的</strong>，服务端内容可以参考附录B。</p></section><section id="sec-ES2015-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-ES2015-">2.2</a></span>ES2015语法和模块</h3><p>Mantra依赖于ES2015多个特性，特别是模块系统，而Meteor1.3则支持所有这些特性。</p></section><section id="sec-UI-React"><h3><span class="spec-secid" title="link to this section"><a href="#sec-UI-React">2.3</a></span>UI使用React</h3><p>Mantra使用React实现UI表现层。</p><p>UI组件不依赖程序，也不能读取程序状态，用来渲染UI组件的数据和事件处理函数是通过props传入的。有时在UI组件里会使用临时本地状态，但是这样的状态永远不会被外部的内容引用。</p><p>当编写UI组件时，可以使用任意其它React组件。下面这些地方可以导入React组件</p><ul><li>应用程序其它地方定义的UI组件</li><li>来自NPM的UI组件（比如 material&#8208;ui).</li><li>应用程序中任何的容器</li></ul><p>您可以直接从NPM组件中导入任何库函数，并在UI组件中使用。这些函数应该是<a href="https://en.wikipedia.org/wiki/Pure_function">纯函数</a>.</p><p>下面是一个简单的UI组件：</p><pre><code>import React from 'react';
+
+const PostList = ({posts}) =&gt; (
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">className</span>=<span class="hljs-value">'postlist'</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+      {posts.map(post =&gt; (
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">{post._id}</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">{`</span>/<span class="hljs-attribute">post</span>/${<span class="hljs-attribute">post._id</span>}`}&gt;</span>{post.title}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      ))}
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+);
+
+export default PostList;
+</code></pre></section><section id="sec-Actions"><h3><span class="spec-secid" title="link to this section"><a href="#sec-Actions">2.4</a></span>Actions</h3><p>Actions是在应用程序中写 <strong>业务逻辑</strong> 的地方，包括：</p><ul><li>验证</li><li>状态管理</li><li>远端数据交互</li></ul><p>Action是一个函数，它的第一个参数是应用程序上下文，其它参数是基于调用场景的。</p><p>注意：</p><ul><li>您在action里所有的操作都需要基于程序上下文和传入的参数</li><li>除了库以外，您不能导入任何ES2015模块</li><li>您需要避免在Action里面使用全局变量</li></ul><p>下面是一个action的例子：</p><pre><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  create({Meteor, LocalState, FlowRouter}, title, content) {
+    <span class="hljs-keyword">if</span> (!title || !content) {
+      <span class="hljs-keyword">return</span> LocalState.set(<span class="hljs-string">'SAVING_ERROR'</span>, <span class="hljs-string">'Title &amp; Content are required!'</span>);
+    }
+
+    LocalState.set(<span class="hljs-string">'SAVING_ERROR'</span>, <span class="hljs-literal">null</span>);
+
+    <span class="hljs-keyword">const</span> id = Meteor.uuid();
+    <span class="hljs-comment">// There is a method stub for this in the config/method_stubs</span>
+    <span class="hljs-comment">// That's how we are doing latency compensation</span>
+    Meteor.call(<span class="hljs-string">'posts.create'</span>, id, title, content, (err) =&gt; {
+      <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-keyword">return</span> LocalState.set(<span class="hljs-string">'SAVING_ERROR'</span>, err.message);
+      }
+    });
+    FlowRouter.go(<span class="hljs-string">`/post/<span class="hljs-subst">${id}</span>`</span>);
+  },
+
+  clearErrors({LocalState}) {
+    <span class="hljs-keyword">return</span> LocalState.set(<span class="hljs-string">'SAVING_ERROR'</span>, <span class="hljs-literal">null</span>);
+  }
+};
+</code></pre></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">2.5</a></span>状态管理</h3><p>在应用程序中，我们需要处理不同类型的状态，这些状态可以分为两大类型：</p><ol><li><strong>本地状态</strong> - 仅存在于客户端的状态，不与服务端同步，比如错误信息，验证消息和当前页面等。</li><li><strong>远端状态</strong> - 需要从服务端获取并进行同步的状态。</li></ol><p>应用程序里有多种管理状态的方法，包括：</p><ul><li>Meteor/MiniMongo (远端状态)</li><li>Tracker/ReactiveDict (本地状态)</li><li>FlowRouter (本地状态)</li><li>Redux (本地状态)</li><li>GraphQL (远端状态)</li><li>Falcor (远端状态)</li></ul><p>JavaScript社区很多的关于状态管理的新方法，Mantra是很灵活的，您可以使用任何需要的方法。</p><p>比如，程序启动时您可以使用如下方法</p><ul><li>Meteor/MiniMongo (远端状态)</li><li>Tracker/ReactiveDict (本地状态)</li><li>FlowRouter (本地状态)</li></ul><p>然后，您可以使用其它方法</p><p>注意：Mantra有一些管理状态的强制规则</p><ul><li>任何针对状态的写操作应该在action里完成</li><li>可以在action和容器里面读取状态</li><li>不应该在UI组件里直接读写状态，UI组件需要完全不了解程序的状态</li></ul><p>下面是一些状态管理的例子：</p><ul><li><a href="https://github.com/mantrajs/mantra-sample-blog-app/blob/master/client/modules/core/containers/newpost.js#L6">读本地状态 &ndash; 在容器里</a></li><li><a href="https://github.com/mantrajs/mantra-sample-blog-app/blob/master/client/modules/core/actions/posts.js#L4">写本地状态 &ndash; 在action里</a></li><li><a href="https://github.com/mantrajs/mantra-sample-blog-app/blob/master/client/modules/core/containers/postlist.js#L7">读远端状态 &ndash; 在容器里</a></li></ul></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">2.6</a></span>容器</h3><p>容器是Mantra里的集成层，它主要执行如下操作:</p><ul><li>使用状态修改变量并将它们通过props传递到UI组件里</li><li>将action传递到UI组件里</li><li>将应用程序上下文内容传递到UI组件里</li></ul><p>容器也是一个React组件，它通过<a href="https://github.com/kadirahq/react-komposer">react&#8208;komposer</a>进行集成，支持不同的数据源，包括Meteor/Tracker, Promises, Rx.js Observable等。</p><p>容器内需要写如下这些函数：</p><ul><li>从状态管理模块获取数据的composer函数</li><li>从依赖注入层获取数据的mapper函数</li></ul><p>创建一个容器时需要遵循如下规则：</p><ul><li>每个文件仅能有一个容器，而且需要被默认导出(default export)</li><li>composer函数和mapper函数需要从容器模块里面导出</li><li>composer函数只能使用从props获得的变量</li><li>mapper函数应该是<a href="https://en.wikipedia.org/wiki/Pure_function">纯函数</a>.</li></ul><p>注意：如果您需要将应用程序上下文传递给一个组件，要使用mapper通过props传递。</p><p>下面是一个容器的例子:</p><pre><code><span class="hljs-keyword">import</span> PostList <span class="hljs-keyword">from</span> <span class="hljs-string">'../components/postlist.jsx'</span>;
+<span class="hljs-keyword">import</span> {useDeps, composeWithTracker, composeAll} <span class="hljs-keyword">from</span> <span class="hljs-string">'mantra-core'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> composer = ({context}, onData) =&gt; {
+  <span class="hljs-keyword">const</span> {Meteor, Collections} = context();
+  <span class="hljs-keyword">if</span> (Meteor.subscribe(<span class="hljs-string">'posts.list'</span>).ready()) {
+    <span class="hljs-keyword">const</span> posts = Collections.Posts.find().fetch();
+    onData(<span class="hljs-literal">null</span>, {posts});
+  }
+};
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> composeAll(
+  composeWithTracker(composer),
+  useDeps()
+)(PostList);
+</code></pre></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">2.7</a></span>应用程序上下文</h3><p>应用程序上下文对所有action和容器都是可见的，所以可以将应用程序共享变量放在这个地方，包括</p><ul><li>Meteor命名空间</li><li>Meteor数据集</li><li>LocalState</li><li>FlowRouter</li><li>其它Meteor包</li><li>Redux存储</li><li>Rest客户端</li><li>DDP客户端</li></ul><p>下面是一个简单的例子：</p><pre><code><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> Collections <span class="hljs-keyword">from</span> <span class="hljs-string">'/lib/collections'</span>;
+<span class="hljs-keyword">import</span> {Meteor} <span class="hljs-keyword">from</span> <span class="hljs-string">'meteor/meteor'</span>;
+<span class="hljs-keyword">import</span> {FlowRouter} <span class="hljs-keyword">from</span> <span class="hljs-string">'meteor/kadira:flow-router'</span>;
+<span class="hljs-keyword">import</span> {ReactiveDict} <span class="hljs-keyword">from</span> <span class="hljs-string">'meteor/reactive-dict'</span>;
+<span class="hljs-keyword">import</span> {Tracker} <span class="hljs-keyword">from</span> <span class="hljs-string">'meteor/tracker'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    Meteor,
+    FlowRouter,
+    Collections,
+    LocalState: <span class="hljs-keyword">new</span> ReactiveDict(),
+    Tracker
+  };
+}
+</code></pre></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">2.8</a></span>依赖注入</h3><p>Mantra使用依赖注入来区分应用程序的不同部分，包括UI组件和action。可以使用<a href="https://github.com/kadirahq/react-simple-di"><code>react-simple-di</code></a>来实现依赖注入。</p><p>一旦配置完成，应用程序上下文会被自动注入到每个action里。</p><p>另外，应用程序上下文也可以在容器里访问。</p><section id="sec-undefined.-.-.-"><h4><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-.-">2.8.1</a></span>配置依赖注入</h4><p>依赖会被注入到应用程序最高层的组件里，比如布局(Layout)组件，您可以在路由里面实现注入:</p><pre><code><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">injectDeps</span>) </span>{
+  <span class="hljs-comment">// See: Injecting Deps</span>
+  <span class="hljs-keyword">const</span> MainLayoutCtx = injectDeps(MainLayout);
+
+  <span class="hljs-comment">// Routes related code</span>
+}
+</code></pre></section></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">2.9</a></span>路由和组件挂载</h3><p>在Mantra里，路由唯一的功能就是将组件挂载(mount)到UI上。可以有多种选择，比如<a href="https://github.com/kadirahq/flow-router/">Flow Router</a>和<a href="https://github.com/rackt/react-router">React Router</a>。</p><p>下面例子使用FlowRouter作为路由:</p><pre><code><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> {FlowRouter} <span class="hljs-keyword">from</span> <span class="hljs-string">'meteor/kadira:flow-router'</span>;
+<span class="hljs-keyword">import</span> {mount} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-mounter'</span>;
+
+<span class="hljs-keyword">import</span> MainLayout <span class="hljs-keyword">from</span> <span class="hljs-string">'/client/modules/core/components/main_layout.jsx'</span>;
+<span class="hljs-keyword">import</span> PostList <span class="hljs-keyword">from</span> <span class="hljs-string">'/client/modules/core/containers/postlist'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">injectDeps</span>) </span>{
+  <span class="hljs-keyword">const</span> MainLayoutCtx = injectDeps(MainLayout);
+
+  FlowRouter.route(<span class="hljs-string">'/'</span>, {
+    name: <span class="hljs-string">'posts.list'</span>,
+    action() {
+      mount(MainLayoutCtx, {
+        content: () =&gt; (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">PostList</span> /&gt;</span>)</span>
+      });
+    }
+  });
+}
+</code></pre></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">2.10</a></span>库</h3><p>每个应用程序都需要一些完成不同功能的工具函数，您可以通过NPM来获得它们。这些库会导出函数，所以您可以在程序的任何地方导入它们，包括action，组件和容器。</p><p>当在一个组件里使用库函数时，库函数需要是<a href="https://en.wikipedia.org/wiki/Pure_function">纯函数</a>.</p></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">2.11</a></span>测试</h3><p>测试是Mantra和核心内容，可以对程序的每部分进行测试。具体实现时可以使用诸如<a href="https://mochajs.org/">Mocha</a>, <a href="http://chaijs.com/">Chai</a>, 和 <a href="http://sinonjs.org/">Sinon</a>这样的常见工具。</p><p>在Mantra里，您可以对应用程序的三个核心部分进行单元测试，示例如下：</p><ul><li>UI组件 - <a href="https://github.com/mantrajs/mantra-sample-blog-app/blob/master/client/modules/core/components/tests/post.js">示例</a></li><li>Actions - <a href="https://github.com/mantrajs/mantra-sample-blog-app/blob/master/client/modules/core/actions/tests/posts.js">示例</a></li><li>容器composers和deps mappers - <a href="https://github.com/mantrajs/mantra-sample-blog-app/blob/master/client/modules/core/containers/tests/post.js">示例</a></li></ul><section id="sec-UI-"><h4><span class="spec-secid" title="link to this section"><a href="#sec-UI-">2.11.1</a></span>UI测试</h4><p>我们使用<a href="https://github.com/airbnb/enzyme">enzyme</a>进行UI测试。通过<a href="https://github.com/mantrajs/mantra-sample-blog-app/blob/master/client/modules/core/components/tests/post.js">这个例子</a>来看一些测试样例。</p></section></section><section id="sec-undefined.-.Mantra-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.Mantra-">2.12</a></span>Mantra模块</h3><p>Mantra遵循模块化架构，除了应用程序上下文，Mantra所有的组件都应该在某个模块里.</p><p>您可以在程序里创建很多模块，并通过import来进行集成。</p><section id="sec-undefined.-.Mantra-.-"><h4><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.Mantra-.-">2.12.1</a></span>应用程序上下文和模块</h4><p>应用程序上下文是应用程序的核心，它的定义应该不依赖任何模块。所有模块可以通过依赖来访问应用程序上下文，但是模块不应该去更新应用程序上下文。</p></section><section id="sec-undefined.-.Mantra-.-"><h4><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.Mantra-.-">2.12.2</a></span>模块定义</h4><p>Mantra的模块需要一个定义文件&lsquo;index.js&rsquo;，用来暴露action和路由并可以接受应用程序上下文。</p><p>一个简单的模块定义如下图所示：</p><pre><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-comment">// 可选</span>
+  load(context, actions) {
+    <span class="hljs-comment">// 模块初始化</span>
+  },
+  <span class="hljs-comment">// 可选</span>
+  actions: {
+    myNamespace: {
+      doSomething: (context, arg1) =&gt; {}
+    }
+  },
+  <span class="hljs-comment">// 可选</span>
+  routes(injectDeps) {
+    <span class="hljs-keyword">const</span> InjectedComp = injectDeps(MyComp);
+    <span class="hljs-comment">// load routes and put `InjectedComp` to the screen.</span>
+  }
+};
+</code></pre></section><section id="sec-undefined.-.Mantra-.-"><h4><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.Mantra-.-">2.12.3</a></span>隐性模块</h4><p>隐性模块(Implicit Modules)不需要定义文件，它没有action或者路由，也不需要做任何初始化操作，它可以包含下面这些内容：</p><ul><li>UI组件</li><li>容器</li><li>库</li></ul></section><section id="sec--UI-"><h4><span class="spec-secid" title="link to this section"><a href="#sec--UI-">2.12.4</a></span>模块容器和UI组件</h4><p>模块容器和UI组件可以通过ES2015模块的方式导入。</p></section><section id="sec--Actions"><h4><span class="spec-secid" title="link to this section"><a href="#sec--Actions">2.12.5</a></span>模块Actions</h4><p>一个模块可以通过命名空间暴露action。这些命名空间对于应用程序而言是全局的，模块需要确保命名空间的唯一性。不过一个模块也可以暴露多个命名空间。</p><p>最后，每个模块的所有命名空间都会被合并，并可以在action和容器里面访问。</p></section><section id="sec-undefined.-.Mantra-.-"><h4><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.Mantra-.-">2.12.6</a></span>路由</h4><p>在Mantra里，您可以使用任何路由库，如果需要的话，可以在多个模块里面定义路由。</p></section><section id="sec-undefined.-.Mantra-.-"><h4><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.Mantra-.-">2.12.7</a></span>核心模块</h4><p>Mantra是百分之百模块化的，每个应用程序里至少有一个核心模块(core module)。 它仅是一个简单的模块，您需要在加载其它任何模块之前加载这个模块。核心模块是应用程序相关内容的最佳实现位置，包括：</p><ul><li>核心路由</li><li>应用程序配置</li><li>公共库</li><li>公共action</li></ul><p>根据程序的不同，有很多种组织模块的方法，具体方法可以参考附录C。</p></section><section id="sec-undefined.-.Mantra-.-"><h4><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.Mantra-.-">2.12.8</a></span>避免子模块</h4><p>在一个模块内<strong>不可以</strong>有子模块。这个决定是为了不必要的复杂性，因为多层嵌套的模块结构是非常难以维护的。</p></section></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">2.13</a></span>单入口点</h3><p>我们希望Mantra程序的运行是可预期的，这样我们会在程序里放置唯一的入口点<code>client/main.js</code>。它会初始化程序上下文并加载程序中所有的模块，下面是一个示例：</p><pre><code><span class="hljs-keyword">import</span> {createApp} <span class="hljs-keyword">from</span> <span class="hljs-string">'mantra-core'</span>;
+<span class="hljs-keyword">import</span> {initContext} <span class="hljs-keyword">from</span> <span class="hljs-string">'./configs/context'</span>;
+
+<span class="hljs-comment">// modules</span>
+<span class="hljs-keyword">import</span> coreModule <span class="hljs-keyword">from</span> <span class="hljs-string">'./modules/core'</span>;
+<span class="hljs-keyword">import</span> commentsModule <span class="hljs-keyword">from</span> <span class="hljs-string">'./modules/comments'</span>;
+
+<span class="hljs-comment">// init context</span>
+<span class="hljs-keyword">const</span> context = initContext();
+
+<span class="hljs-comment">// create app</span>
+<span class="hljs-keyword">const</span> app = createApp(context);
+app.loadModule(coreModule);
+app.loadModule(commentsModule);
+app.init();
+</code></pre></section></section><section id="sec-undefined.-"><h2><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-">3</a></span>目录结构</h2><p>在Mantra里强制目录结构规则，这是可维护性的关键。</p><p><em>这里只讨论客户端目录结构，服务端目录结构可以参考附录B。</em></p><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">3.1</a></span>顶层目录结构</h3><p>所有Mantra相关代码都在应用程序的 <code>client</code> 目录下，这个目录有2个子目录和1个js文件，它们是：</p><pre><code>* configs
+* modules
+* main.js
+</code></pre><section id="sec-undefined.-.-.configs"><h4><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-.configs">3.1.1</a></span>configs</h4><p>这个目录包含应用程序的顶层配置信息，针对所有模块通用的配置信息放在这里。</p><p>这个目录下所有的js文件应该都具备一个默认导出函数，它完成初始化工作并返回一些必要的内容。</p><p><em>我们一般用这里的<code>context.js</code>文件放置应用程序上下文。</em></p></section><section id="sec-modules"><h4><span class="spec-secid" title="link to this section"><a href="#sec-modules">3.1.2</a></span>modules</h4><p>这个目录下的不同子目录中放置不同的模块，至少有一个命名为<code>core</code>的核心模块，内部结构如下：</p><pre><code>* actions
+* components
+* configs
+* containers
+* libs
+* routes.jsx
+* index.js
+</code></pre><section id="sec-actions"><h5><span class="spec-secid" title="link to this section"><a href="#sec-actions">3.1.2.1</a></span>actions</h5><p>这个目录包含模块里所有的actions:</p><pre><code>* posts.js
+* index.js
+* tests
+    - posts.js
+</code></pre><p><code>posts.js</code> 是一个ES2015模块，它可以导出一个具有action的js对象。</p><p>下面是一个简单的action模块：</p><pre><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  create({Meteor, LocalState, FlowRouter}, title, content) {
+    <span class="hljs-comment">//...</span>
+  },
+
+  clearErrors({LocalState}) {
+    <span class="hljs-comment">//...</span>
+  }
+};
+</code></pre><p>在<code>index.js</code>里导入所有的action模块并聚合所有action，并给每个模块一个命名空间。</p><pre><code><span class="hljs-keyword">import</span> posts <span class="hljs-keyword">from</span> <span class="hljs-string">'./posts'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  posts
+};
+</code></pre><p>在上面例子中，我们给<code>posts.js</code>action模块一个<code>posts</code>的命名空间。</p><p><em>在应用程序中命名空间需要唯一性，这是我们在编写模块时需要注意的。</em></p><p>在tests目录下，我们针对每个action模块编写它们的测试，可以参考附录D以获取更多的关于测试文件命名规则的问题。</p><p><a href="https://github.com/mantrajs/mantra-sample-blog-app/tree/master/client/modules/core/actions">点击这里查看action的目录结构</a></p></section><section id="sec-components"><h5><span class="spec-secid" title="link to this section"><a href="#sec-components">3.1.2.2</a></span>components</h5><p>components目录包含模块的UI组件：</p><pre><code>* main_layout.jsx
+* post.jsx
+* style.css
+* tests
+  - main_layout.js
+  - post.js
+</code></pre><ul><li>这个目录下所有的<code>.jsx</code>文件都需要有一个默认的export。它应该是一个React类。</li><li>您可以针对这些React组件编写CSS文件，Meteor会帮您打包。</li></ul><p>这里也有一个tests目录，具体命名习惯可以参考附录D。</p><p><a href="https://github.com/mantrajs/mantra-sample-blog-app/tree/master/client/modules/core/components">点击这里查看components的目录结构</a></p></section><section id="sec-containers"><h5><span class="spec-secid" title="link to this section"><a href="#sec-containers">3.1.2.3</a></span>containers</h5><p>这个目录包含一些 <code>.js</code> 文件, 每个文件代表一个容器，并具有一个默认导出的React容器类：</p><pre><code>* post.js
+* postlist.js
+* tests
+    - post.js
+    - postlist.js
+</code></pre><p>这里也有一个测试目录<code>tests</code>，具体命名习惯可以参考附录D。</p><p><a href="https://github.com/mantrajs/mantra-sample-blog-app/tree/master/client/modules/core/containers">点击这里查看容器的目录结构</a></p></section><section id="sec-modules.configs"><h5><span class="spec-secid" title="link to this section"><a href="#sec-modules.configs">3.1.2.4</a></span>configs</h5><p>这个目录包含模块的配置信息。</p><p>这个目录下所有的js文件都需要导出一个默认函数，完成初始化并返回一些内容，这些函数都采用应用程序上下文作为第一个参数。</p><p>下面是一个示例的配置文件：</p><pre><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">context</span>) </span>{
+  <span class="hljs-comment">// do something</span>
+}
+</code></pre><p>在加载模块时，这些配置信息会被导入和调用。</p><p><a href="https://github.com/mantrajs/mantra-sample-blog-app/tree/master/client/modules/core/configs">点击这里查看configs的目录结构</a></p></section><section id="sec-modules.libs"><h5><span class="spec-secid" title="link to this section"><a href="#sec-modules.libs">3.1.2.5</a></span>libs</h5><p>这个目录包含一系列能够导出工具函数的js文件，这也被称作为库，您可以在tests目录下为这些库编写测试函数。</p></section><section id="sec-routes-jsx"><h5><span class="spec-secid" title="link to this section"><a href="#sec-routes-jsx">3.1.2.6</a></span>routes.jsx</h5><p>这个文件包含模块的路由定义，它有一个默认导出函数:</p><pre><code><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> {FlowRouter} <span class="hljs-keyword">from</span> <span class="hljs-string">'meteor/kadira:flow-router'</span>;
+<span class="hljs-keyword">import</span> {mount} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-mounter'</span>;
+
+<span class="hljs-keyword">import</span> MainLayout <span class="hljs-keyword">from</span> <span class="hljs-string">'/client/modules/core/components/main_layout.jsx'</span>;
+<span class="hljs-keyword">import</span> PostList <span class="hljs-keyword">from</span> <span class="hljs-string">'/client/modules/core/containers/postlist'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">injectDeps</span>) </span>{
+  <span class="hljs-keyword">const</span> MainLayoutCtx = injectDeps(MainLayout);
+
+  FlowRouter.route(<span class="hljs-string">'/'</span>, {
+    name: <span class="hljs-string">'posts.list'</span>,
+    action() {
+      mount(MainLayoutCtx, {
+        content: () =&gt; (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">PostList</span> /&gt;</span>)</span>
+      });
+    }
+  });
+}
+</code></pre><p>这里默认导出一个函数，函数里在加载模块时使用<code>injectDeps</code>向React组件里面注入依赖。</p></section><section id="sec-index-js"><h5><span class="spec-secid" title="link to this section"><a href="#sec-index-js">3.1.2.7</a></span>index.js</h5><p>这是模块定义文件，如果不考虑下面这些工作就不需要这个定义文件了:</p><ul><li>加载路由</li><li>定义action</li><li>加载模块时运行配置信息</li></ul><p>下面是一个标准的模块定义：</p><pre><code><span class="hljs-keyword">import</span> methodStubs <span class="hljs-keyword">from</span> <span class="hljs-string">'./configs/method_stubs'</span>;
+<span class="hljs-keyword">import</span> actions <span class="hljs-keyword">from</span> <span class="hljs-string">'./actions'</span>;
+<span class="hljs-keyword">import</span> routes <span class="hljs-keyword">from</span> <span class="hljs-string">'./routes.jsx'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  routes,
+  actions,
+  load(context) {
+    methodStubs(context);
+  }
+};
+</code></pre><p>在这个模块定义里<code>.load()</code> 方法在模块加载时被调用。所以，这是调用配置的地方。</p></section></section><section id="sec-undefined.-.-.main-js"><h4><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-.main-js">3.1.3</a></span>main.js</h4><p>这里是Mantra应用程序的入口，初始化程序上下文并加载模块，这些工作是由一个被称作<code>mantra-core</code>的库完成的。</p><p>下面是一个例子：</p><pre><code><span class="hljs-keyword">import</span> {createApp} <span class="hljs-keyword">from</span> <span class="hljs-string">'mantra-core'</span>;
+<span class="hljs-keyword">import</span> initContext <span class="hljs-keyword">from</span> <span class="hljs-string">'./configs/context'</span>;
+
+<span class="hljs-comment">// modules</span>
+<span class="hljs-keyword">import</span> coreModule <span class="hljs-keyword">from</span> <span class="hljs-string">'./modules/core'</span>;
+<span class="hljs-keyword">import</span> commentsModule <span class="hljs-keyword">from</span> <span class="hljs-string">'./modules/comments'</span>;
+
+<span class="hljs-comment">// init context</span>
+<span class="hljs-keyword">const</span> context = initContext();
+
+<span class="hljs-comment">// create app</span>
+<span class="hljs-keyword">const</span> app = createApp(context);
+app.loadModule(coreModule);
+app.loadModule(commentsModule);
+app.init();
+</code></pre></section></section></section><section id="sec-undefined.-"><h2><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-">4</a></span>未来工作</h2><p>Mantra目前处于草案阶段，未来还会有很多改进和补充。下面这些内容相对重要，会在近期补充。</p><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">4.1</a></span>服务端渲染</h3><p>Mantra可以进行服务端渲染，目前的参考实现可以查看<a href="https://github.com/kadirahq/flow-router/tree/ssr">FlowRouter SSR</a>.</p></section><section id="sec--NPM-Mantra-"><h3><span class="spec-secid" title="link to this section"><a href="#sec--NPM-Mantra-">4.2</a></span>通过NPM发布Mantra模块</h3><p>未来需要通过NPM发布Mantra的模块，一旦完成这个工作，我们就可以极大地共享代码。</p></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">4.3</a></span>代码标准</h3><p>未来需要一个编写代码的标准。</p></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">4.4</a></span>测试标准</h3><p>未来需要一个编写测试的标准。</p></section><section id="sec--Composers"><h3><span class="spec-secid" title="link to this section"><a href="#sec--Composers">4.5</a></span>复用Composers</h3><p>未来需要一个相应的规范，从而可以在很多地方针对同样的功能复用composer。 </p></section></section><section id="sec--Mantra-"><h2><span class="spec-secid" title="link to this section"><a href="#sec--Mantra-">5</a></span>为Mantra贡献</h2><p>这是Mantra标准的一个草本，下面这个的示例程序充分展示了Mantra的特性</p><ul><li><a href="http://mantra-sample-blog.meteor.com/">在线应用</a></li><li><a href="https://github.com/mantrajs/mantra-sample-blog-app">源代码</a></li></ul><p>对Mantra的讨论在<a href="https://github.com/kadirahq/mantra/issues">这里</a>进行。</p><ul><li><a href="https://github.com/kadirahq/mantra">英文版标准</a> </li></ul></section><section id="sec-undefined.-"><h2><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-">A</a></span>附录: 预备知识</h2><p>下面这些资源有助于您更加清晰地了解Mantra.</p><section id="sec-ES2015"><h3><span class="spec-secid" title="link to this section"><a href="#sec-ES2015">A.1</a></span>ES2015</h3><p>ES2015是2015年最新版的JavaScript语言标准，由于Meteor已经内置了ES2015支持，所以您不需要做任何额外的工作就可以直接使用。</p><p>ES2015是JavaScript世界最激动人心的事件，它引入了很多新特性，并解决了很多公共问题。</p><ul><li><a href="https://tutor.mantrajs.com/say-hello-to-ES2015/introduction">Learn ES2015: Say Hello to ES2015</a></li></ul></section><section id="sec-React"><h3><span class="spec-secid" title="link to this section"><a href="#sec-React">A.2</a></span>React</h3><p>React是一个基于JavaScript的UI框架。您可以在JavaScript里创建基于HTML内容，这个特性一开始看起来比较奇怪，不过适应以后会发现非常有用。下面是一些必要的资源：</p><ul><li><a href="https://facebook.github.io/react/docs/tutorial.html">官方教程</a></li><li><a href="https://scotch.io/tutorials/learning-react-getting-started-and-concepts">Scotch.io的入门教程</a></li><li><a href="https://medium.com/@dan_abramov/react-components-elements-and-instances-90800811f8ca">React Components, Elements, and Instances</a></li></ul></section><section id="sec-React-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-React-">A.3</a></span>React容器</h3><p>我们目前很少使用React组件的状态，而是通过props获取数据，React的<a href="https://medium.com/@joshblack/stateless-components-in-react-0-14-f9798f8b992d">无状态组件</a>使这项工作非常容易。</p><p>我们使用React容器从不同的数据源获取数据并加载到UI组件时，<a href="https://github.com/kadirahq/react-komposer">react&#8208;komposer</a>使这项工作更加容易，下面这篇文章可以让您获取更多知识。</p><ul><li><a href="https://voice.kadira.io/let-s-compose-some-react-containers-3b91b6d9b7c8#.my9ynz9e2">Let&rsquo;s Compose Some React Containers</a></li></ul></section><section id="sec-Meteor-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-Meteor-">A.4</a></span>Meteor基础</h3><p>您需要对Meteor有一个相对深入的了解。可以遵循Meteor的<a href="https://www.meteor.com/tutorials/react/creating-an-app">官方教程</a>.</p><p><strong> Mantra在使用上述技术时略有不同，比如Meteor的React教程建议使用mixin获取Mongo集合数据。但是Mantra使用容器这种更加时髦的方式来使用React。</strong> </p></section></section><section id="sec-undefined.-"><h2><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-">B</a></span>附录: 服务端目录结构</h2><p>服务端目录结构不是Mantra的核心内容，不过它类似客户端的目录结构，有一个main目录以及一个 <code>main.js</code> 的js文件。</p><pre><code>* methods
+* publications
+* libs
+* configs
+* main.js
+</code></pre><section id="sec-methods"><h3><span class="spec-secid" title="link to this section"><a href="#sec-methods">B.1</a></span>methods</h3><p>应用程序的Method放在这个目录下，文件结构如下：</p><pre><code>* posts.js
+* index.js
+* tests
+  - posts.js
+</code></pre><p>这里有一个<code>posts.js</code>文件，实现了应用程序里关于<code>posts</code>特性的一些method。这里有一个默认的导出函数，Meteor的Method就定义在这个函数里。</p><p>命名method名称的时候，需要一个前缀，前缀是文件名和一个点，比如 <code>posts.</code></p><p>项目是一些 <code>posts.js</code> 内定义的method的例子：</p><pre><code><span class="hljs-keyword">import</span> {Posts, Comments} <span class="hljs-keyword">from</span> <span class="hljs-string">'/lib/collections'</span>;
+<span class="hljs-keyword">import</span> {Meteor} <span class="hljs-keyword">from</span> <span class="hljs-string">'meteor/meteor'</span>;
+<span class="hljs-keyword">import</span> {check} <span class="hljs-keyword">from</span> <span class="hljs-string">'meteor/check'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  Meteor.methods({
+    <span class="hljs-string">'posts.create'</span>(_id, title, content) {
+      <span class="hljs-comment">//  method body</span>
+    }
+  });
+
+  Meteor.methods({
+    <span class="hljs-string">'posts.createComment'</span>(_id, postId, text) {
+      <span class="hljs-comment">//  method body</span>
+    }
+  });
+}
+</code></pre><p>最后，需要一个 <code>index.js</code> 文件， 它可以导入目录下的其它模块并在默认导出里调用。 所以当导入方法时，我们可以用单个导入实现。</p><p>下面是一个<code>index.js</code>的例子：</p><pre><code><span class="hljs-keyword">import</span> posts <span class="hljs-keyword">from</span> <span class="hljs-string">'./posts'</span>;
+<span class="hljs-keyword">import</span> admin <span class="hljs-keyword">from</span> <span class="hljs-string">'./admin'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  posts();
+  admin();
+}
+</code></pre><section id="sec-methods.-"><h4><span class="spec-secid" title="link to this section"><a href="#sec-methods.-">B.1.1</a></span>测试</h4><p>我们可以为tests目录下的method编写测试，这时最好使用集成测试而不是单元测试。</p><p>具体内容可参考<a href="https://github.com/anticoders/gagarin">Gagarin</a>.</p></section></section><section id="sec-publications"><h3><span class="spec-secid" title="link to this section"><a href="#sec-publications">B.2</a></span>publications</h3><p>这个目录和<code>methods</code>一致，我们写发布而不是method。</p></section><section id="sec-undefined.-.libs"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.libs">B.3</a></span>libs</h3><p>这个目录包含一些在服务端使用的工具函数。</p></section><section id="sec-undefined.-.configs"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.configs">B.4</a></span>configs</h3><p>我们在这里写用用程序的配置信息，这些配置需要一个默认的导出函数，可以被导入和调用，配置代码需要在这个函数里编写。</p><p>下面是一个示例：</p><pre><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">//  invoke the configuration here</span>
+}
+</code></pre></section><section id="sec-undefined.-.main-js"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.main-js">B.5</a></span>main.js</h3><p>这里是整个应用程序启动的入口点，我们在这里导入method，发布和配置代码。</p><p>下面是一个<code>main.js</code>的示例：</p><pre><code><span class="hljs-keyword">import</span> publications <span class="hljs-keyword">from</span> <span class="hljs-string">'./publications'</span>;
+<span class="hljs-keyword">import</span> methods <span class="hljs-keyword">from</span> <span class="hljs-string">'./methods'</span>;
+<span class="hljs-keyword">import</span> addInitialData <span class="hljs-keyword">from</span> <span class="hljs-string">'./configs/initial_adds.js'</span>;
+
+publications();
+methods();
+addInitialData();
+</code></pre><p>注意： 可以看这个<a href="https://github.com/mantrajs/mantra-sample-blog-app/tree/master/server">样例代码</a>来学习具体的实现方式。 </p></section></section><section id="sec-undefined.-"><h2><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-">C</a></span>附录: 组织模块</h2><p>Mantra是一个百分之百基于模块的应用程序架构，至少应该有一个模块。我们已经讨论了如何在模块里面组织代码以及如何使用它们，但是我并没有讨论过如何组织模块。下面是一些常见的组织模块的方式。</p><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">C.1</a></span>单个核心模块</h3><p>简单程序可以将所有代码放到一个模块里，并命名为 <code>core</code>，这比较适用于客户端代码比较少的简单程序。</p></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">C.2</a></span>核心模块外加多个特性模块</h3><p>这是在上述&ldquo;单个核心模块&rdquo;模式的扩充:</p><ul><li>有一个具备所有客户端核心代码的core模块，包括所有的路由。</li><li>针对应用程序的不同特性，具有不同的模块，而这些模块没有路由。</li></ul></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">C.3</a></span>多模块</h3><p>在多模块方式下，没有单个核心模块。</p><ul><li>针对程序的每个特性都有多个模块。</li><li>每个模块具有自己的路由。</li></ul></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">C.4</a></span>页面模块</h3><p>注意: 这种方式可以与上述任何方式一起使用。</p><p>有时候，我们需要显示一些UI页面。但是它们并没有action，路由和配置。它们只包含UI代码，可能是UI组件或者其它容器，这时可以使用隐含模块。 </p></section></section><section id="sec-undefined.-"><h2><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-">D</a></span>附录: 命名约定</h2><p>目录结构一节讨论了不同组件组织文件的方式，这里我们讨论命名文件的方式。</p><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">D.1</a></span>源码文件命名</h3><p>我们从文件名除去扩展名后需要满足如下条件：</p><ul><li>所有字母需要小写字母</li><li>文件名需要是<a href="https://en.wikipedia.org/wiki/Alphanumeric">alphanumeric</a>的，可以外加下划线 <code>_</code> 符号。</li><li>文件名需要以字母开头。</li></ul><p>相应的正则表达式是:</p><pre><code>/^[a-z]+[a-z0-<span class="hljs-number">9</span>_]+$/
+</code></pre></section><section id="sec-undefined.-.-"><h3><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-">D.2</a></span>测试文件命名</h3><p>我们用如下规则命名<code>tests</code>目录下的文件名：</p><ul><li>在源码目录下需要有一个一样的名称</li><li>如果没有，去掉后缀以后，在源码目录下需要有同样的名称</li></ul><section id="sec-undefined.-.-.-"><h4><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-.-.-">D.2.1</a></span>后缀</h4><p>大多数情况下，每个源码文件都有一个测试文件。当需要为一个源码文件创建多个测试文件时，就需要编写后缀了。</p><p>如果源码文件名是 <code>posts.js</code>, 那么添加后缀以后将会如下的样子：</p><pre><code>posts-part1.js
+posts-part2.js
+</code></pre><p>相应的正则表达式是:</p><pre><code>/^([a-z]+[a-z0-<span class="hljs-number">9</span>_]+)(\-[a-z]+[a-z0-<span class="hljs-number">9</span>_]+)*$/
+</code></pre></section></section></section><section id="sec-undefined.-"><h2><span class="spec-secid" title="link to this section"><a href="#sec-undefined.-">E</a></span>附录: 词汇表</h2><p>中英翻译及核心概念解释。</p><ul><li><strong>UI Component</strong> 界面组件</li><li><strong>Action</strong></li><li><strong>Implicit Modules</strong> 隐性模块 </li></ul></section><footer>Written in <a href="http://leebyron.com/spec-md/" target="_blank">Spec Markdown</a>.</footer></body></html>
